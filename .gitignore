@@ -1,0 +1,10 @@
+bedcount-web/src/main/web-bc1/node/
+bedcount-web/target/
+.settings/
+bedocunt-rest/.mvn/
+bedocunt-rest/mvnw
+bedcount-web/.classpath
+bedcount-web/.project
+.project
+.classpath
+bedocunt-rest/mvnw.cmd

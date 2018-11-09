@@ -1,0 +1,53 @@
+
+<div class="row top-buffer">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div class="well well-lg">
+					<h3>
+						<b>Bed Count - Reports</b>
+					</h3>
+					<p>Report provides the summary data based on entries by administrators and providers.</p>
+
+					<p>Page is restricted to Administrators.  Providers do not have access to this section.</p>
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div id="bsError">
+
+    			</div>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<table class="table table-bordered">
+
+					<tr>
+						<th colspan="6" align="center">Available Beds: &nbsp;&nbsp;&nbsp;
+						</th>
+					</tr>
+					<tr>
+						<th rowspan="1" align="center">Location</th>
+						<th colspan="1" ># of Male</th>
+						<th colspan="1" ># of Female</th>
+						<th colspan="1" scope="colgroup" ># of CoEd</th>
+						<th colspan="1" scope="colgroup">Pending Adm</th>
+						<th colspan="1" scope="colgroup">Pending Dis</th>
+					</tr>
+          <tr *ngFor="let report of reports">
+            <td> {{report.locationName}}</td>
+            <td> {{report.male}}</td>
+            <td>{{report.female}}</td>
+            <td>{{report.coed}}</td>
+            <td>{{report.pendAdm}}</td>
+            <td>{{report.pendDis}}</td>
+          </tr>
+				</table>
+			</div>
+			<div class="col-md-2"></div>
+		</div>

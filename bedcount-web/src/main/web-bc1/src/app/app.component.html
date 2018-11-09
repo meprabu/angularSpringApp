@@ -1,0 +1,30 @@
+<div class="container" style="border: 1px solid #cecece;">
+
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<IMG src="./assets/images/DMHbanner.gif" style="width: 100%;" />
+				<div *ngIf="isTokenPresent == true">
+					<nav class="navbar navbar-inverse" style="background-color: #e3f2fd;">
+					  <div class="container-fluid">
+					    <div class="navbar-header">
+					      <a class="navbar-brand" href="#">Bed Count</a>
+					    </div>
+					    <ul class="nav navbar-nav">
+					      <li><a href="#" [routerLink]="['root']">CSU</a></li>
+					      <li><a href="#">CL</a></li>
+					      <li><a href="#">XXXX</a></li>
+					    </ul>
+					    <ul class="nav navbar-nav navbar-right">
+					      <li><a href="#"><span class="glyphicon glyphicon-user"></span>dmh.Prabu.Jayapandia</a></li>
+					      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+					    </ul>
+					  </div>
+					</nav>
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+
+    <router-outlet></router-outlet>
+	</div>
