@@ -11,11 +11,13 @@ import {TokenService} from '../app/services/token.service';
 export class AppComponent implements OnInit{
   title = 'BedCount System';
   isTokenPresent : boolean = false;
+  userName: string;
   constructor(private _tokeService: TokenService){
   }
 
   ngOnInit(){
       this.checkToken();
+      this.userName = localStorage.getItem('currentUser');
   }
 
   checkToken(){

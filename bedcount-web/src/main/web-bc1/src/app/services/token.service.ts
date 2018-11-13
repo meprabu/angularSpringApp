@@ -14,10 +14,11 @@ export class TokenService{
     let toeknval$ = this.http.get(`${this.baseUrl}`, {headers: this.getHeaders()})
                             .map((response: Response) => {
                               console.log('--------------------------------------------------------');
-                              console.log(response.headers);
-                              console.log(response.text())
+                              console.log(response.headers.get('Authorization').split(" ")[1]);
                               if(response.text()){
-                                localStorage.setItem('currentUser', response.text());
+                                localStorage.setItem('currentUser', response.json().who);
+                                localStorage.setItem('userpermit', response.json().permit);
+                                localStorage.setItem('token', response.headers.get('Authorization').split(" ")[1]);
                                 return true;
                               }else{
                                 return false;

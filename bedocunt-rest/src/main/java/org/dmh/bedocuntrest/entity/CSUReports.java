@@ -12,7 +12,7 @@ public class CSUReports {
 	private String pendAdm;
 	private String pendDis;
 	private String locationName;
-	
+	private String modifyDate;
 	
 	public String getLocationCode() {
 		return locationCode;
@@ -73,6 +73,12 @@ public class CSUReports {
 	}
 	public void setLocationName(String locationName) {
 		this.locationName = locationName;
+	}
+	public String getModifyDate() {
+		return modifyDate;
+	}
+	public void setModifyDate(String modifyDate) {
+		this.modifyDate = modifyDate;
 	}
 	
 	

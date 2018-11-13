@@ -2,6 +2,7 @@ package org.dmh.bedocuntrest.config;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -10,11 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
+
+import org.dmh.bedocuntrest.entity.DmhUser;
 import org.dmh.bedocuntrest.enums.Constants;
 
 
@@ -59,14 +64,28 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter{
 				.build()
 				.verify(token.replace(Constants.TOKEN_PREFIX, ""))
 				.getSubject();
-			
+			String permit = JWT.require(Algorithm.HMAC512(Constants.SECRET.getBytes()))
+					.build()
+					.verify(token.replace(Constants.TOKEN_PREFIX, "")).getClaim("ROLE").asString();
+					
 			if (user != null) {
-                return new UsernamePasswordAuthenticationToken(user, null, new ArrayList<>());
+                return new UsernamePasswordAuthenticationToken(user, permit, getUserAuthorities(permit));
             }
 			return null;
 		}
 		return null;
 	}
 	
+	private List<GrantedAuthority> getUserAuthorities(String permit) {
 
+		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+		if (permit.equals("999")) {
+			authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+		} else if (permit.equals("995")) {
+			authorities.add(new SimpleGrantedAuthority("ROLE_PROVIDERADMIN"));
+		} else {
+			authorities.add(new SimpleGrantedAuthority("ROLE_PROVIDER"));
+		}
+		return authorities;
+	}
 }

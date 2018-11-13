@@ -37,7 +37,7 @@ export class ReportService {
     // will request text/html instead of application/json
     let headers = new Headers();
     headers.append('Accept', 'application/json');
-    let bearer = 'Bearer ' + localStorage.getItem('currentUser');
+    let bearer = 'Bearer ' + localStorage.getItem('token');
     headers.append('Authorization', bearer);
     return headers;
   }

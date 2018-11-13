@@ -8,16 +8,16 @@ public class DmhUser {
 	}
 
 
-	public String who;
-	public String first_name;
-	public String last_name;
-	public String location_code;
-	public String permit;
-	public String pswd;
-	public boolean occupancRate;
+	private String who;
+	private String first_name;
+	private String last_name;
+	private String location_code;
+	private String permit;
+	private String pswd;
+	private boolean occupancRate;
 	private DMHRoles role;
-	public String email;
-	public String phone;
+	private String email;
+	private String phone;
 	
 	
 	

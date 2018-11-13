@@ -26,7 +26,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
         this.userDetailsService = userDetailsService;
     }
     
-/*	@Bean
+	@Bean
 	public RequestHeaderAuthenticationFilter requestHeaderAuthenticationFilter() throws Exception{
 
 	    RequestHeaderAuthenticationFilter it = new RequestHeaderAuthenticationFilter();
@@ -34,7 +34,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 	    it.setAuthenticationManager(authenticationManager());
 	    it.setExceptionIfHeaderMissing(true);
 	    return it;
-	}*/
+	}
     
    @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -45,6 +45,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
                 .antMatchers("/*.css").permitAll()
                 .anyRequest().authenticated()
                 .and()
+               // .addFilter(requestHeaderAuthenticationFilter()) //add when preauth is needed
                 .addFilter(new JWTAuthorizationFilter(authenticationManager()));
                 // this disables session creation on Spring Security
                // .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
