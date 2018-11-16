@@ -1,0 +1,106 @@
+<div class="container" >
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+
+  <div class="row top-buffer">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="well well-lg">
+        <h3>
+          <b>Crisis Stabilization Unit - Licensed/Active Beds</b>
+        </h3>
+        <p>Select a single provider or all providers.  Enter the number of licensed beds and active beds available for each unit/service type and each gender.</p>
+
+        <p>Page is restricted to Administrators.  Providers do not have access to this section.</p>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div id="bsError">
+         <div class="alert alert-danger fade in">
+              <strong>Error!</strong> Please Enter at least one value.
+          </div>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <table class="table table-bordered">
+
+        <tr>
+          <th colspan="4" align="center">Provider: &nbsp;&nbsp;&nbsp;
+            <div class="dropdown">
+              <!--  <button class="btn btn-default dropdown-toggle" id="providerButton" type="button" data-toggle="dropdown">Select 1 or All Providers
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu" id="dropdown-prov">
+                  <li ng-repeat="provider in providers">
+                    <a ng-click="toggleDropdown($event)" >
+                      {{provider}}
+                    </a>
+                  </li>
+                </ul> -->
+                <select [(ngModel)]="selectedProvider" (ngModelChange)="onChangeProvider($event)">
+                  <option value="" selected> Select a Provider</option>
+                  <option *ngFor="let prov of  providers" [ngValue]="prov.split('-')[0].trim()">{{prov}}</option>
+                </select>
+            </div>
+          </th>
+          <th colspan="4" align="center">Location:
+            <select [(ngModel)]="selectedLocation">
+              <option value=""> Select a Location</option>
+              <option *ngFor="let loc of  locations" (ngModelChange)="onChangeLocation($event)" [ngValue]="loc.location_code">{{loc.location_code}} - {{loc.locationName}}</option>
+              <option value="all" *ngIf="(locations?.length >1)"> All Locations</option>
+            </select>
+          </th>
+        </tr>
+        <tr >
+          <th rowspan="2" colspan="2" align="center">Unit/Service</th>
+          <!--<th colspan="1" rowspan="2" scope="colgroup">Provider</th> -->
+          <th colspan="2" rowspan="2" scope="colgroup">Location</th>
+          <th colspan="2" scope="colgroup" >Licensed Beds</th>
+          <th colspan="2" scope="colgroup">ActiveBeds</th>
+        </tr>
+        <tr>
+          <th scope="col">Male</th>
+          <th scope="col" >Female</th>
+          <!-- <th scope="col">CoEd</th> -->
+          <th scope="col" >Male</th>
+          <th scope="col" >Female</th>
+          <!-- <th scope="col">CoEd</th> -->
+        </tr>
+        <tr *ngFor='let csuValue of  csuLicense'>
+          <td colspan='2' nowrap align="left">{{csuValue.bed_type}} </td>
+          <td colspan='2' id="location-row1"> <b> {{csuValue.locationName}}</b></td>
+          <td><input type='text' size='2' maxlength='4'  [value]='csuValue?.licMale?.trim()'  [disabled]='userpermit==995 ? true : false' /> </td>
+          <td><input type="text" size="2" maxlength="4"  [value]='csuValue?.licFemale?.trim()' [disabled]='userpermit==995 ? true : false' /> </td>
+          <td><input type="text" size="2" maxlength="4"  [value]='csuValue.actMale?.trim()' [disabled]='userpermit==995 ? true : false' /> </td>
+          <td><input type="text" size="2" maxlength="4"  [value]='csuValue.actFemale?.trim()' [disabled]='userpermit==995 ? true : false' /></td>
+          <td style="display:none;"> {{csuValue.org_code}} </td>
+          <td style="display:none;">  {{csuValue.location_code}} </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-1">	<input class="btn btn-primary" type="button"  [routerLink]="['/root']" value="Back"></div>
+    <div class="col-md-5"></div>
+
+    <div class="col-md-1"></div>
+  </div>
+
+</div>

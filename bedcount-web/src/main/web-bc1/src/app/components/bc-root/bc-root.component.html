@@ -15,23 +15,19 @@
   <div class="col-md-2"></div>
   <div class="col-md-4">
     <ul class="list-group">
-      <a href="" class="list-group-item" data-toggle="tooltip" title=" Administrators maintain the number of licensed beds and the number of active beds."  > <b>BC Licensed/Active Beds </b> </a>
-      <a href="#" class="list-group-item" data-toggle="tooltip" title="Providers submit the number of occupied beds."><b>BC Occupied Beds </b></a>
-      <a  [routerLink]="['/reports']" class="list-group-item" data-toggle="tooltip" title="Report provides the summary data based on entries by administrators and providers."><b>BC Reports</b></a>
-      <a href="#" class="list-group-item" ><b>Maintain BedCount</b></a>
-      <a href="http://www.dmh.state.ms.us" class="list-group-item " data-toggle="tooltip" title="This link leads to the DMH website, www.dmh.ms.gov. This will navigate away from the Bed Count resource."><b>DMH Website</b></a>
-      <a href="menu.jsp" class="list-group-item " data-toggle="tooltip" title="This link will return the user to the Central Data Repository (CDR)."><b>CDR Main Menu</b></a>
-      <a href="/vdesk/hangup.php3" class="list-group-item " ><b>Logout</b></a>
-      
+      <a [routerLink]="['/csuAdmins']"  class="list-group-item" data-toggle="tooltip" title=" Administrators maintain the number of licensed beds and the number of active beds."  > <b>Licensed Beds </b> </a>
+      <a href="#" class="list-group-item" data-toggle="tooltip" title="Providers submit the number of occupied beds."><b>Occupied Beds </b></a>
+      <a  [routerLink]="['/reports']" class="list-group-item" data-toggle="tooltip" title="Report provides the summary data based on entries by administrators and providers."><b>Reports</b></a>
+
+
     </ul>
   </div>
   <div class="col-md-4">
     <div class="well well-lg">
-      <p id="pBCLicense">BC Licensed/Active Beds - Administrators maintain the number of licensed beds and the number of active beds.</p>
-      <p id="pBCOccupied">BC Occupied Beds - Providers submit the number of occupied beds.</p>
-      <p id="pBCReports">BC Report - Report provides the summary data based on entries by administrators and providers.</p>
-      <p id="pBCDmhWeb">DMH Website  - This link leads to the DMH website, www.dmh.ms.gov.  This will navigate away from the Bed Count resource.</p>
-      <p id="pBCMainmenu">CDR Main Menu  - This link will return the user to the Central Data Repository (CDR).</p>
+      <p id="pBCLicense">Licensed Beds - Administrators maintain the number of licensed beds and the number of active beds.</p>
+      <p id="pBCOccupied">Occupied Beds - Providers submit the number of occupied beds.</p>
+      <p id="pBCReports">eport - Report provides the summary data based on entries by administrators and providers.</p>
+
     </div>
   </div>
   <div class="col-md-1">

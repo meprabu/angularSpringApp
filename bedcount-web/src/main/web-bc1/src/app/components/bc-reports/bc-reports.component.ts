@@ -27,7 +27,7 @@ export class BcReportsComponent implements OnInit {
   function handleError (error: any) {
   // log error
   // could be something more sofisticated
-  let errorMsg = error.message || `Yikes! There was a problem with our hyperdrive device and we couldn't retrieve your data!`
+  let errorMsg = error.message || `There was a problem couldn't retrieve your data!`
   console.error(errorMsg);
 
   // throw an application level error

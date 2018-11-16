@@ -18,6 +18,8 @@ public class DmhUser {
 	private DMHRoles role;
 	private String email;
 	private String phone;
+	private String csu;
+	private String cl;
 	
 	
 	
@@ -86,6 +88,18 @@ public class DmhUser {
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	public String getCsu() {
+		return csu;
+	}
+	public void setCsu(String csu) {
+		this.csu = csu;
+	}
+	public String getCl() {
+		return cl;
+	}
+	public void setCl(String cl) {
+		this.cl = cl;
 	}
 	
 	

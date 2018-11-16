@@ -4,6 +4,7 @@ import {Routes, RouterModule} from '@angular/router';
 import  {BcReportsComponent} from './components/bc-reports/bc-reports.component';
 import {BcRootComponent} from './components/bc-root/bc-root.component';
 import {BcLoginComponent} from './components/bc-login/bc-login.component';
+import {CsuLicenseComponent} from './components/csu-license/csu-license.component';
 import {AppComponent} from '../app/app.component';
 const routes: Routes = [
   {
@@ -17,6 +18,9 @@ const routes: Routes = [
   {
     path : 'login',
     component: BcLoginComponent
+  },{
+    path: 'csuAdmins',
+    component: CsuLicenseComponent
   }
 
 ];

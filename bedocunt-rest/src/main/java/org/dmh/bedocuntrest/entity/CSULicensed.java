@@ -2,38 +2,21 @@ package org.dmh.bedocuntrest.entity;
 
 public class CSULicensed {
 	
-	private String orgCode;
-	private String locationCode;
-	private String bedtype;
+	private String org_code;
+	private String location_code;
+	private String bed_type;
 	private String orgName;
 	private String locationName;
 	private String bedTypeDesc;
-	private String licBedMale;
-	private String licBedFeMale;
-	private String licBedCoed;
-	private String actBedMale;
-	private String actBedFeMale;
-	private String actBedCoed;
+	private String lic_bed_male;
+	private String lic_bed_female;
+	private String lic_bed_coed;
+	private String act_bed_male;
+	private String act_bed_female;
+	private String act_bed_coed;
 	
 	
-	public String getOrgCode() {
-		return orgCode;
-	}
-	public void setOrgCode(String orgCode) {
-		this.orgCode = orgCode;
-	}
-	public String getLocationCode() {
-		return locationCode;
-	}
-	public void setLocationCode(String locationCode) {
-		this.locationCode = locationCode;
-	}
-	public String getBedtype() {
-		return bedtype;
-	}
-	public void setBedtype(String bedtype) {
-		this.bedtype = bedtype;
-	}
+	
 	public String getOrgName() {
 		return orgName;
 	}
@@ -52,42 +35,61 @@ public class CSULicensed {
 	public void setBedTypeDesc(String bedTypeDesc) {
 		this.bedTypeDesc = bedTypeDesc;
 	}
-	public String getLicBedMale() {
-		return licBedMale;
+	public String getOrg_code() {
+		return org_code;
 	}
-	public void setLicBedMale(String licBedMale) {
-		this.licBedMale = licBedMale;
+	public void setOrg_code(String org_code) {
+		this.org_code = org_code;
 	}
-	public String getLicBedFeMale() {
-		return licBedFeMale;
+	public String getLocation_code() {
+		return location_code;
 	}
-	public void setLicBedFeMale(String licBedFeMale) {
-		this.licBedFeMale = licBedFeMale;
+	public void setLocation_code(String location_code) {
+		this.location_code = location_code;
 	}
-	public String getLicBedCoed() {
-		return licBedCoed;
+	public String getBed_type() {
+		return bed_type;
 	}
-	public void setLicBedCoed(String licBedCoed) {
-		this.licBedCoed = licBedCoed;
+	public void setBed_type(String bed_type) {
+		this.bed_type = bed_type;
 	}
-	public String getActBedMale() {
-		return actBedMale;
+	public String getLic_bed_male() {
+		return lic_bed_male;
 	}
-	public void setActBedMale(String actBedMale) {
-		this.actBedMale = actBedMale;
+	public void setLic_bed_male(String lic_bed_male) {
+		this.lic_bed_male = lic_bed_male;
 	}
-	public String getActBedFeMale() {
-		return actBedFeMale;
+	public String getLic_bed_female() {
+		return lic_bed_female;
 	}
-	public void setActBedFeMale(String actBedFeMale) {
-		this.actBedFeMale = actBedFeMale;
+	public void setLic_bed_female(String lic_bed_female) {
+		this.lic_bed_female = lic_bed_female;
 	}
-	public String getActBedCoed() {
-		return actBedCoed;
+	public String getLic_bed_coed() {
+		return lic_bed_coed;
 	}
-	public void setActBedCoed(String actBedCoed) {
-		this.actBedCoed = actBedCoed;
+	public void setLic_bed_coed(String lic_bed_coed) {
+		this.lic_bed_coed = lic_bed_coed;
 	}
+	public String getAct_bed_male() {
+		return act_bed_male;
+	}
+	public void setAct_bed_male(String act_bed_male) {
+		this.act_bed_male = act_bed_male;
+	}
+	public String getAct_bed_female() {
+		return act_bed_female;
+	}
+	public void setAct_bed_female(String act_bed_female) {
+		this.act_bed_female = act_bed_female;
+	}
+	public String getAct_bed_coed() {
+		return act_bed_coed;
+	}
+	public void setAct_bed_coed(String act_bed_coed) {
+		this.act_bed_coed = act_bed_coed;
+	}
+	
 	
 	
 	

@@ -93,10 +93,10 @@ public class CLReports {
 				String pendDisc = "";
 				String modifiedDate = "";
 				for (CSULicensed licenseBed : listLincesed) {
-					if (licenseBed.getOrgCode().equals(provider) && licenseBed.getLocationCode().equals(location)) {
-						activeMale = licenseBed.getActBedMale();
-						activeFemale = licenseBed.getActBedFeMale();
-						activeCoed = licenseBed.getActBedCoed();
+					if (licenseBed.getOrg_code().equals(provider) && licenseBed.getLocation_code().equals(location)) {
+						activeMale = licenseBed.getAct_bed_male();
+						activeFemale = licenseBed.getAct_bed_female();
+						activeCoed = licenseBed.getAct_bed_coed();
 					}
 				}
 				for (CSUOccupied occupiedBed : listOccupied) {
